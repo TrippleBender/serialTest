@@ -7,6 +7,8 @@
 
 #include <unistd.h>
 #include <string>
+#include <sstream>
+#include <iostream>
 #include <SerialStream.h>
 
 
@@ -42,21 +44,38 @@ int main (int argc, char** argv)
 	//Read something!
 
 	std::string inString = "";
-	const std::string *str = NULL;
+	char inchar;
 
 	int data = 0;
 
 	std::cout << "Daten empfangen!" << std::endl;
 
-	while(my_serial_stream.IsDataAvailable())
+	while(true)
 	{
-		//Read
+		if(my_serial_stream.IsDataAvailable())
+		{
+			my_serial_stream.get(inchar);
 
-		std::getline(my_serial_stream, inString);
-		my_serial_stream >> data;
+			switch (inchar)
+			{
+			case 'X':
+				std::getline(my_serial_stream, inString);
+				my_serial_stream >> data;
+				std::cout << "X = " << data << std::endl;
+				break;
 
-		std::cout << data << std::endl;
-		std::cout << "---" << std::endl;
+			case 'Y':
+				std::getline(my_serial_stream, inString);
+				my_serial_stream >> data;
+				std::cout << "Y = " << data << std::endl;
+				break;
+
+			default:
+			  std::cout << "Was ist los?" << std::endl;
+
+			}
+			usleep(250000);
+		}
 	}
 }
 
