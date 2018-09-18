@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ben/workspace/serialTest/src/serialTestRead.cpp
+iostream
+-
+sstream
+-
+fstream
+-
+cstdlib
+-
+string
+-
+SerialStream.h
+-
+

@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/serialTest.dir/src/serialTestWrite.cpp.o  -o serialTest -rdynamic -lserial -lpthread 
