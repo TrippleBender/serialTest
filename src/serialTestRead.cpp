@@ -47,7 +47,7 @@ int main (int argc, char** argv)
 	//Read something!
 
 	std::string inString = "";
-	const char *str = NULL;
+	const std::string *str = NULL;
 
 	int data = 0;
 
@@ -58,14 +58,15 @@ int main (int argc, char** argv)
 		//Read
 		//my_serial_stream >> inChar;
 		std::getline(my_serial_stream, inString);
+		my_serial_stream >> data;
 		/*str = inString;
-		data = atoi(str);*/
+		data = stoi(str);*/
 
 		//data = atoi(&inString);
 		//std::cout << data << std::endl;						//funktioniert auch mit serial.write unter Arduino
 
-		std::cout << inString << std::endl;					//funktioniert nur mit serial.print unter Arduino
-		//std::cout << data << std::endl;
+		//std::cout << inString << std::endl;					//funktioniert nur mit serial.print unter Arduino
+		std::cout << data << std::endl;
 		std::cout << "---" << std::endl;
 	}
 }
