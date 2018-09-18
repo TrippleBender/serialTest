@@ -7,17 +7,7 @@
 #IncludeRegexTransform: 
 
 /home/ben/workspace/serialTest/src/serialTestRead.cpp
-iostream
--
 unistd.h
--
-stdlib.h
--
-sstream
--
-fstream
--
-cstdlib
 -
 string
 -

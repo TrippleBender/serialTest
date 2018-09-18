@@ -5,12 +5,7 @@
  *      Author: ben
  */
 
-#include <iostream>
 #include <unistd.h>
-#include <stdlib.h>
-#include <sstream>
-#include <fstream>
-#include <cstdlib>
 #include <string>
 #include <SerialStream.h>
 
@@ -56,16 +51,10 @@ int main (int argc, char** argv)
 	while(my_serial_stream.IsDataAvailable())
 	{
 		//Read
-		//my_serial_stream >> inChar;
+
 		std::getline(my_serial_stream, inString);
 		my_serial_stream >> data;
-		/*str = inString;
-		data = stoi(str);*/
 
-		//data = atoi(&inString);
-		//std::cout << data << std::endl;						//funktioniert auch mit serial.write unter Arduino
-
-		//std::cout << inString << std::endl;					//funktioniert nur mit serial.print unter Arduino
 		std::cout << data << std::endl;
 		std::cout << "---" << std::endl;
 	}
