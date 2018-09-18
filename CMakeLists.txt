@@ -6,3 +6,5 @@ add_executable(serialTestRead src/serialTestRead.cpp)
 ##add_dependencies(serialTest ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries (serialTestRead  serial pthread)
 ##target_link_libraries (serialTestWrite  serial pthread)
+
+SET(CMAKE_CXX_FLAGS "-std=c++0x")
