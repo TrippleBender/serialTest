@@ -71,7 +71,10 @@ int main (int argc, char** argv)
 				break;
 
 			default:
-			  std::cout << "Was ist los?" << std::endl;
+				;
+				/*std::getline(my_serial_stream, inString);
+				my_serial_stream >> data;
+				std::cout << "default = " << data << std::endl;*/
 
 			}
 			usleep(250000);
