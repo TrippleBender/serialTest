@@ -42,4 +42,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/serialTestRead.dir/DependInfo.cmake"
+  "CMakeFiles/serialWriteRead.dir/DependInfo.cmake"
+  "CMakeFiles/serialTestWrite.dir/DependInfo.cmake"
   )

@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++0x   CMakeFiles/serialTiltScanner.dir/src/serialTilstScanner.cpp.o  -o serialTiltScanner -rdynamic -lserial -lpthread 

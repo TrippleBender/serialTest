@@ -1,7 +1,7 @@
 /*
- * serialTestWrite.cpp
+ * serialTilstScanner.cpp
  *
- *  Created on: 12.09.2018
+ *  Created on: 19.09.2018
  *      Author: ben
  */
 
@@ -13,7 +13,7 @@ int main (int argc, char** argv)
 {
 	//Create and open the serial port
 	LibSerial::SerialStream my_serial_stream;
-	my_serial_stream.Open("/dev/ttyACM0");
+	my_serial_stream.Open("/dev/ttyUSB0");
 
 	//Set the baudrate
 	my_serial_stream.SetBaudRate(LibSerial::BaudRate::BAUD_9600);
@@ -31,10 +31,28 @@ int main (int argc, char** argv)
 	my_serial_stream.SetFlowControl(LibSerial::FlowControl::FLOW_CONTROL_NONE);
 
 	std::cout << "Port eingerichtet!" << std::endl;
-
-	//Write something!
-	my_serial_stream << "1700" << std::endl;
 	usleep(1000000);
-	my_serial_stream << "\n" << std::endl;
-	std::cout << "Daten geschrieben!" << std::endl;
+
+	bool i = 1;
+	char inchar;
+
+	//start scan
+	while(i)
+	{
+		my_serial_stream << "T\n" << std::endl;
+
+		usleep(100000);
+
+		my_serial_stream << "V\n" << std::endl;
+
+		/*my_serial_stream.get(inchar);
+		if(inchar == '\n')
+		{
+			i = 0;
+		}*/
+	}
+
 }
+
+
+

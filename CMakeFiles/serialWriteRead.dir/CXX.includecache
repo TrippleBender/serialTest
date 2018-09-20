@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ben/workspace/serialTest/src/serialTestWrite.cpp
+/home/ben/workspace/serialTest/src/serialWriteRead.cpp
 unistd.h
 -
 iostream

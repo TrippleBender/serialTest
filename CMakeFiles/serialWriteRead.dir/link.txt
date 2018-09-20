@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++0x   CMakeFiles/serialWriteRead.dir/src/serialWriteRead.cpp.o  -o serialWriteRead -rdynamic -lserial -lpthread 

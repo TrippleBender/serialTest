@@ -56,6 +56,27 @@ int main (int argc, char** argv)
 		{
 			my_serial_stream.get(inchar);
 
+			if(inchar == '\n')
+			{
+				if(inString == "\nRoll")
+				{
+					std::cout << "Es läuft!!" << std::endl;
+				}
+
+				else
+				{
+					std::cout << inString << std::endl;
+				}
+
+				inString = "";
+			}
+
+			inString += inchar;
+
+
+			//std::cout << inchar << std::ends;						//gibt Roll aus!!! :)
+
+
 			switch (inchar)
 			{
 			case 'X':
@@ -72,12 +93,8 @@ int main (int argc, char** argv)
 
 			default:
 				;
-				/*std::getline(my_serial_stream, inString);
-				my_serial_stream >> data;
-				std::cout << "default = " << data << std::endl;*/
 
 			}
-			usleep(250000);
 		}
 	}
 }

@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/ben/workspace/serialTest
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -123,6 +123,32 @@ serialTestRead/fast:
 	$(MAKE) -f CMakeFiles/serialTestRead.dir/build.make CMakeFiles/serialTestRead.dir/build
 .PHONY : serialTestRead/fast
 
+#=============================================================================
+# Target rules for targets named serialWriteRead
+
+# Build rule for target.
+serialWriteRead: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 serialWriteRead
+.PHONY : serialWriteRead
+
+# fast build rule for target.
+serialWriteRead/fast:
+	$(MAKE) -f CMakeFiles/serialWriteRead.dir/build.make CMakeFiles/serialWriteRead.dir/build
+.PHONY : serialWriteRead/fast
+
+#=============================================================================
+# Target rules for targets named serialTestWrite
+
+# Build rule for target.
+serialTestWrite: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 serialTestWrite
+.PHONY : serialTestWrite
+
+# fast build rule for target.
+serialTestWrite/fast:
+	$(MAKE) -f CMakeFiles/serialTestWrite.dir/build.make CMakeFiles/serialTestWrite.dir/build
+.PHONY : serialTestWrite/fast
+
 src/serialTestRead.o: src/serialTestRead.cpp.o
 
 .PHONY : src/serialTestRead.o
@@ -150,18 +176,80 @@ src/serialTestRead.cpp.s:
 	$(MAKE) -f CMakeFiles/serialTestRead.dir/build.make CMakeFiles/serialTestRead.dir/src/serialTestRead.cpp.s
 .PHONY : src/serialTestRead.cpp.s
 
+src/serialTestWrite.o: src/serialTestWrite.cpp.o
+
+.PHONY : src/serialTestWrite.o
+
+# target to build an object file
+src/serialTestWrite.cpp.o:
+	$(MAKE) -f CMakeFiles/serialTestWrite.dir/build.make CMakeFiles/serialTestWrite.dir/src/serialTestWrite.cpp.o
+.PHONY : src/serialTestWrite.cpp.o
+
+src/serialTestWrite.i: src/serialTestWrite.cpp.i
+
+.PHONY : src/serialTestWrite.i
+
+# target to preprocess a source file
+src/serialTestWrite.cpp.i:
+	$(MAKE) -f CMakeFiles/serialTestWrite.dir/build.make CMakeFiles/serialTestWrite.dir/src/serialTestWrite.cpp.i
+.PHONY : src/serialTestWrite.cpp.i
+
+src/serialTestWrite.s: src/serialTestWrite.cpp.s
+
+.PHONY : src/serialTestWrite.s
+
+# target to generate assembly for a file
+src/serialTestWrite.cpp.s:
+	$(MAKE) -f CMakeFiles/serialTestWrite.dir/build.make CMakeFiles/serialTestWrite.dir/src/serialTestWrite.cpp.s
+.PHONY : src/serialTestWrite.cpp.s
+
+src/serialWriteRead.o: src/serialWriteRead.cpp.o
+
+.PHONY : src/serialWriteRead.o
+
+# target to build an object file
+src/serialWriteRead.cpp.o:
+	$(MAKE) -f CMakeFiles/serialWriteRead.dir/build.make CMakeFiles/serialWriteRead.dir/src/serialWriteRead.cpp.o
+.PHONY : src/serialWriteRead.cpp.o
+
+src/serialWriteRead.i: src/serialWriteRead.cpp.i
+
+.PHONY : src/serialWriteRead.i
+
+# target to preprocess a source file
+src/serialWriteRead.cpp.i:
+	$(MAKE) -f CMakeFiles/serialWriteRead.dir/build.make CMakeFiles/serialWriteRead.dir/src/serialWriteRead.cpp.i
+.PHONY : src/serialWriteRead.cpp.i
+
+src/serialWriteRead.s: src/serialWriteRead.cpp.s
+
+.PHONY : src/serialWriteRead.s
+
+# target to generate assembly for a file
+src/serialWriteRead.cpp.s:
+	$(MAKE) -f CMakeFiles/serialWriteRead.dir/build.make CMakeFiles/serialWriteRead.dir/src/serialWriteRead.cpp.s
+.PHONY : src/serialWriteRead.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... serialTestRead"
+	@echo "... serialWriteRead"
+	@echo "... serialTestWrite"
+	@echo "... rebuild_cache"
 	@echo "... src/serialTestRead.o"
 	@echo "... src/serialTestRead.i"
 	@echo "... src/serialTestRead.s"
+	@echo "... src/serialTestWrite.o"
+	@echo "... src/serialTestWrite.i"
+	@echo "... src/serialTestWrite.s"
+	@echo "... src/serialWriteRead.o"
+	@echo "... src/serialWriteRead.i"
+	@echo "... src/serialWriteRead.s"
 .PHONY : help
 
 
