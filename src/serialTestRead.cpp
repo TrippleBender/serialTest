@@ -73,11 +73,14 @@ int main (int argc, char** argv)
 
 			inString += inchar;
 
+			/*std::getline(my_serial_stream, inString);					//geht nicht!!
+			my_serial_stream >> inchar;
+			std::cout << inchar << std::endl;*/
 
-			//std::cout << inchar << std::ends;						//gibt Roll aus!!! :)
+			//std::cout << inchar << std::ends;									//gibt Roll aus!!! :)
 
 
-			switch (inchar)
+			/*switch (inchar)
 			{
 			case 'X':
 				std::getline(my_serial_stream, inString);
@@ -92,9 +95,9 @@ int main (int argc, char** argv)
 				break;
 
 			default:
-				;
+				;*/
 
-			}
+			//}
 		}
 	}
 }

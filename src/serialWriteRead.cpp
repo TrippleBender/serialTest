@@ -41,19 +41,22 @@ int main (int argc, char** argv)
 		my_serial_stream << 'T' << std::endl;
 		std::cout << "Daten geschrieben!" << std::endl;
 
-
 		//Read the answer
 		std::string inString = "";
 		char inchar;
+		bool flag = true;
 
 		int data = 0;
 
 		std::cout << "Daten empfangen!" << std::endl;
 
 
-		while(my_serial_stream.IsDataAvailable())
+		while(my_serial_stream.IsDataAvailable() && flag)
 		{
-			my_serial_stream.get(inchar);
+			//my_serial_stream.get(inchar);
+			std::getline(my_serial_stream, inString);
+			my_serial_stream >> inchar;
+
 
 			switch (inchar)
 			{
@@ -87,6 +90,12 @@ int main (int argc, char** argv)
 
 				default:
 					std::cout << "Default: " << inchar << std::endl;
+			}
+
+			if(inchar == 'E')									//Terminierung!!
+			{
+				flag = false;
+				my_serial_stream.flush();
 			}
 		}
 		usleep(1000000);
