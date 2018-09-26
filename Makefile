@@ -124,6 +124,19 @@ serialTestRead/fast:
 .PHONY : serialTestRead/fast
 
 #=============================================================================
+# Target rules for targets named serialTestWrite
+
+# Build rule for target.
+serialTestWrite: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 serialTestWrite
+.PHONY : serialTestWrite
+
+# fast build rule for target.
+serialTestWrite/fast:
+	$(MAKE) -f CMakeFiles/serialTestWrite.dir/build.make CMakeFiles/serialTestWrite.dir/build
+.PHONY : serialTestWrite/fast
+
+#=============================================================================
 # Target rules for targets named serialWriteRead
 
 # Build rule for target.
@@ -137,17 +150,17 @@ serialWriteRead/fast:
 .PHONY : serialWriteRead/fast
 
 #=============================================================================
-# Target rules for targets named serialTestWrite
+# Target rules for targets named serialTiltScanner
 
 # Build rule for target.
-serialTestWrite: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 serialTestWrite
-.PHONY : serialTestWrite
+serialTiltScanner: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 serialTiltScanner
+.PHONY : serialTiltScanner
 
 # fast build rule for target.
-serialTestWrite/fast:
-	$(MAKE) -f CMakeFiles/serialTestWrite.dir/build.make CMakeFiles/serialTestWrite.dir/build
-.PHONY : serialTestWrite/fast
+serialTiltScanner/fast:
+	$(MAKE) -f CMakeFiles/serialTiltScanner.dir/build.make CMakeFiles/serialTiltScanner.dir/build
+.PHONY : serialTiltScanner/fast
 
 src/serialTestRead.o: src/serialTestRead.cpp.o
 
@@ -203,6 +216,33 @@ src/serialTestWrite.cpp.s:
 	$(MAKE) -f CMakeFiles/serialTestWrite.dir/build.make CMakeFiles/serialTestWrite.dir/src/serialTestWrite.cpp.s
 .PHONY : src/serialTestWrite.cpp.s
 
+src/serialTilstScanner.o: src/serialTilstScanner.cpp.o
+
+.PHONY : src/serialTilstScanner.o
+
+# target to build an object file
+src/serialTilstScanner.cpp.o:
+	$(MAKE) -f CMakeFiles/serialTiltScanner.dir/build.make CMakeFiles/serialTiltScanner.dir/src/serialTilstScanner.cpp.o
+.PHONY : src/serialTilstScanner.cpp.o
+
+src/serialTilstScanner.i: src/serialTilstScanner.cpp.i
+
+.PHONY : src/serialTilstScanner.i
+
+# target to preprocess a source file
+src/serialTilstScanner.cpp.i:
+	$(MAKE) -f CMakeFiles/serialTiltScanner.dir/build.make CMakeFiles/serialTiltScanner.dir/src/serialTilstScanner.cpp.i
+.PHONY : src/serialTilstScanner.cpp.i
+
+src/serialTilstScanner.s: src/serialTilstScanner.cpp.s
+
+.PHONY : src/serialTilstScanner.s
+
+# target to generate assembly for a file
+src/serialTilstScanner.cpp.s:
+	$(MAKE) -f CMakeFiles/serialTiltScanner.dir/build.make CMakeFiles/serialTiltScanner.dir/src/serialTilstScanner.cpp.s
+.PHONY : src/serialTilstScanner.cpp.s
+
 src/serialWriteRead.o: src/serialWriteRead.cpp.o
 
 .PHONY : src/serialWriteRead.o
@@ -238,15 +278,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... serialTestRead"
-	@echo "... serialWriteRead"
-	@echo "... serialTestWrite"
 	@echo "... rebuild_cache"
+	@echo "... serialTestWrite"
+	@echo "... serialWriteRead"
+	@echo "... serialTiltScanner"
 	@echo "... src/serialTestRead.o"
 	@echo "... src/serialTestRead.i"
 	@echo "... src/serialTestRead.s"
 	@echo "... src/serialTestWrite.o"
 	@echo "... src/serialTestWrite.i"
 	@echo "... src/serialTestWrite.s"
+	@echo "... src/serialTilstScanner.o"
+	@echo "... src/serialTilstScanner.i"
+	@echo "... src/serialTilstScanner.s"
 	@echo "... src/serialWriteRead.o"
 	@echo "... src/serialWriteRead.i"
 	@echo "... src/serialWriteRead.s"

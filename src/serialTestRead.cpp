@@ -52,7 +52,7 @@ int main (int argc, char** argv)
 
 	while(true)
 	{
-		if(my_serial_stream.IsDataAvailable())
+		/*if(my_serial_stream.IsDataAvailable())
 		{
 			my_serial_stream.get(inchar);
 
@@ -98,6 +98,12 @@ int main (int argc, char** argv)
 				;*/
 
 			//}
+
+		if(my_serial_stream.IsDataAvailable())
+		{
+			std::getline(my_serial_stream, inString);
+			my_serial_stream >> data;
+			std::cout << "X = " << data << std::endl;
 		}
 	}
 }
