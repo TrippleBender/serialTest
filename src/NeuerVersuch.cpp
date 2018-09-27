@@ -10,18 +10,17 @@
 #include <iostream>
 #include <SerialStream.h>
 
-
+void writeDyn(void);
 
 #define ARDUINO_BUFFER_SIZE 10
+#define ARRAY_VAR_COUNT 3
 
-int i = 0;
+uint16_t i = 0;
+uint16_t outBuffer[ARRAY_VAR_COUNT];
 
-
-/*int startPosition = 1500;
-int endPosition = 2000;
-int speed = 200;
-
-char outChar[6];*/
+uint16_t startPosition = 1500;
+uint16_t endPosition = 2000;
+uint16_t speed = 200;
 
 int main (int argc, char** argv)
 {
@@ -52,12 +51,19 @@ int main (int argc, char** argv)
 	{
 		i++;
 		char buffer[ARDUINO_BUFFER_SIZE];
-		//std::cout << my_serial_stream.IsDataAvailable() << std::endl;
+
+		writeDyn();
+		char * charpointer = (char *) (outBuffer);
+		my_serial_stream << '0';
+		usleep(100);
+		my_serial_stream.write(charpointer, ARRAY_VAR_COUNT * 2);
+		usleep(100);
+
 
 		if (my_serial_stream.IsDataAvailable())
 		{
 			char next_char;
-			//my_serial_stream.FlushInputBuffer();
+
 			do
 			{
 				my_serial_stream >> next_char;
@@ -84,7 +90,12 @@ int main (int argc, char** argv)
 				std::cout << "4: " << fp[3] << std::endl;
 				std::cout << "i: " << fp[4] << "\n" << std::endl;
 		}
-		/*my_serial_stream.FlushInputBuffer();
-						std::cerr << "Fehler" << std::endl;*/
 	}
+}
+
+void writeDyn(void)
+{
+	outBuffer[0] = startPosition;
+	outBuffer[1] = endPosition;
+	outBuffer[2] = speed;
 }
