@@ -27,7 +27,7 @@ int main (int argc, char** argv)
 {
 	//Create and open the serial port
 	LibSerial::SerialStream my_serial_stream;
-	my_serial_stream.Open("/dev/ttyUSB0");
+	my_serial_stream.Open("/dev/ttyACM0");
 
 	//Set the baudrate
 	my_serial_stream.SetBaudRate(LibSerial::BaudRate::BAUD_115200);
@@ -84,7 +84,6 @@ int main (int argc, char** argv)
 				std::cout << "4: " << fp[3] << std::endl;
 				std::cout << "i: " << fp[4] << "\n" << std::endl;
 		}
-
 		/*my_serial_stream.FlushInputBuffer();
 						std::cerr << "Fehler" << std::endl;*/
 	}
