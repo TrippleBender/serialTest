@@ -12,7 +12,7 @@
 
 
 
-#define ARDUINO_BUFFER_SIZE 8
+#define ARDUINO_BUFFER_SIZE 10
 
 int i = 0;
 
@@ -81,7 +81,8 @@ int main (int argc, char** argv)
 				std::cout << "Rollposition = " << rollPosition << std::endl;
 				std::cout << "Pitchposition = " << pitchPosition << std::endl;
 				std::cout << "3: " << fp[2] << std::endl;
-				std::cout << "4: " << fp[3] << "\n" << std::endl;
+				std::cout << "4: " << fp[3] << std::endl;
+				std::cout << "i: " << fp[4] << "\n" << std::endl;
 		}
 
 		/*my_serial_stream.FlushInputBuffer();
