@@ -87,8 +87,5 @@ int main (int argc, char** argv)
 
 		/*my_serial_stream.FlushInputBuffer();
 						std::cerr << "Fehler" << std::endl;*/
-
-		usleep(1000000);
-
 	}
 }
