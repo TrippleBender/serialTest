@@ -1,4 +1,5 @@
 /home/ben/workspace/serialTest/CMakeFiles/edit_cache.dir
+/home/ben/workspace/serialTest/CMakeFiles/NeuerVersuch.dir
 /home/ben/workspace/serialTest/CMakeFiles/serialTestRead.dir
 /home/ben/workspace/serialTest/CMakeFiles/rebuild_cache.dir
 /home/ben/workspace/serialTest/CMakeFiles/serialTestWrite.dir

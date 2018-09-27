@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named NeuerVersuch
+
+# Build rule for target.
+NeuerVersuch: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NeuerVersuch
+.PHONY : NeuerVersuch
+
+# fast build rule for target.
+NeuerVersuch/fast:
+	$(MAKE) -f CMakeFiles/NeuerVersuch.dir/build.make CMakeFiles/NeuerVersuch.dir/build
+.PHONY : NeuerVersuch/fast
+
+#=============================================================================
 # Target rules for targets named serialTestRead
 
 # Build rule for target.
@@ -161,6 +174,33 @@ serialTiltScanner: cmake_check_build_system
 serialTiltScanner/fast:
 	$(MAKE) -f CMakeFiles/serialTiltScanner.dir/build.make CMakeFiles/serialTiltScanner.dir/build
 .PHONY : serialTiltScanner/fast
+
+src/NeuerVersuch.o: src/NeuerVersuch.cpp.o
+
+.PHONY : src/NeuerVersuch.o
+
+# target to build an object file
+src/NeuerVersuch.cpp.o:
+	$(MAKE) -f CMakeFiles/NeuerVersuch.dir/build.make CMakeFiles/NeuerVersuch.dir/src/NeuerVersuch.cpp.o
+.PHONY : src/NeuerVersuch.cpp.o
+
+src/NeuerVersuch.i: src/NeuerVersuch.cpp.i
+
+.PHONY : src/NeuerVersuch.i
+
+# target to preprocess a source file
+src/NeuerVersuch.cpp.i:
+	$(MAKE) -f CMakeFiles/NeuerVersuch.dir/build.make CMakeFiles/NeuerVersuch.dir/src/NeuerVersuch.cpp.i
+.PHONY : src/NeuerVersuch.cpp.i
+
+src/NeuerVersuch.s: src/NeuerVersuch.cpp.s
+
+.PHONY : src/NeuerVersuch.s
+
+# target to generate assembly for a file
+src/NeuerVersuch.cpp.s:
+	$(MAKE) -f CMakeFiles/NeuerVersuch.dir/build.make CMakeFiles/NeuerVersuch.dir/src/NeuerVersuch.cpp.s
+.PHONY : src/NeuerVersuch.cpp.s
 
 src/serialTestRead.o: src/serialTestRead.cpp.o
 
@@ -277,11 +317,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... NeuerVersuch"
 	@echo "... serialTestRead"
 	@echo "... rebuild_cache"
 	@echo "... serialTestWrite"
 	@echo "... serialWriteRead"
 	@echo "... serialTiltScanner"
+	@echo "... src/NeuerVersuch.o"
+	@echo "... src/NeuerVersuch.i"
+	@echo "... src/NeuerVersuch.s"
 	@echo "... src/serialTestRead.o"
 	@echo "... src/serialTestRead.i"
 	@echo "... src/serialTestRead.s"

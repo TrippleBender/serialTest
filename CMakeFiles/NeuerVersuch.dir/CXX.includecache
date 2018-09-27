@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ben/workspace/serialTest/src/serialTilstScanner.cpp
+/home/ben/workspace/serialTest/src/NeuerVersuch.cpp
 stdint.h
 -
 unistd.h

@@ -60,13 +60,50 @@ CMAKE_SOURCE_DIR = /home/ben/workspace/serialTest
 CMAKE_BINARY_DIR = /home/ben/workspace/serialTest
 
 #=============================================================================
+# Target rules for target CMakeFiles/NeuerVersuch.dir
+
+# All Build rule for target.
+CMakeFiles/NeuerVersuch.dir/all:
+	$(MAKE) -f CMakeFiles/NeuerVersuch.dir/build.make CMakeFiles/NeuerVersuch.dir/depend
+	$(MAKE) -f CMakeFiles/NeuerVersuch.dir/build.make CMakeFiles/NeuerVersuch.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ben/workspace/serialTest/CMakeFiles --progress-num=1,2 "Built target NeuerVersuch"
+.PHONY : CMakeFiles/NeuerVersuch.dir/all
+
+# Include target in all.
+all: CMakeFiles/NeuerVersuch.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/NeuerVersuch.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ben/workspace/serialTest/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/NeuerVersuch.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ben/workspace/serialTest/CMakeFiles 0
+.PHONY : CMakeFiles/NeuerVersuch.dir/rule
+
+# Convenience name for target.
+NeuerVersuch: CMakeFiles/NeuerVersuch.dir/rule
+
+.PHONY : NeuerVersuch
+
+# clean rule for target.
+CMakeFiles/NeuerVersuch.dir/clean:
+	$(MAKE) -f CMakeFiles/NeuerVersuch.dir/build.make CMakeFiles/NeuerVersuch.dir/clean
+.PHONY : CMakeFiles/NeuerVersuch.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/NeuerVersuch.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/serialTestRead.dir
 
 # All Build rule for target.
 CMakeFiles/serialTestRead.dir/all:
 	$(MAKE) -f CMakeFiles/serialTestRead.dir/build.make CMakeFiles/serialTestRead.dir/depend
 	$(MAKE) -f CMakeFiles/serialTestRead.dir/build.make CMakeFiles/serialTestRead.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ben/workspace/serialTest/CMakeFiles --progress-num=1,2 "Built target serialTestRead"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ben/workspace/serialTest/CMakeFiles --progress-num=3,4 "Built target serialTestRead"
 .PHONY : CMakeFiles/serialTestRead.dir/all
 
 # Include target in all.
@@ -103,7 +140,7 @@ clean: CMakeFiles/serialTestRead.dir/clean
 CMakeFiles/serialTestWrite.dir/all:
 	$(MAKE) -f CMakeFiles/serialTestWrite.dir/build.make CMakeFiles/serialTestWrite.dir/depend
 	$(MAKE) -f CMakeFiles/serialTestWrite.dir/build.make CMakeFiles/serialTestWrite.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ben/workspace/serialTest/CMakeFiles --progress-num=3,4 "Built target serialTestWrite"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ben/workspace/serialTest/CMakeFiles --progress-num=5,6 "Built target serialTestWrite"
 .PHONY : CMakeFiles/serialTestWrite.dir/all
 
 # Include target in all.
@@ -140,7 +177,7 @@ clean: CMakeFiles/serialTestWrite.dir/clean
 CMakeFiles/serialWriteRead.dir/all:
 	$(MAKE) -f CMakeFiles/serialWriteRead.dir/build.make CMakeFiles/serialWriteRead.dir/depend
 	$(MAKE) -f CMakeFiles/serialWriteRead.dir/build.make CMakeFiles/serialWriteRead.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ben/workspace/serialTest/CMakeFiles --progress-num=7,8 "Built target serialWriteRead"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ben/workspace/serialTest/CMakeFiles --progress-num=9,10 "Built target serialWriteRead"
 .PHONY : CMakeFiles/serialWriteRead.dir/all
 
 # Include target in all.
@@ -177,7 +214,7 @@ clean: CMakeFiles/serialWriteRead.dir/clean
 CMakeFiles/serialTiltScanner.dir/all:
 	$(MAKE) -f CMakeFiles/serialTiltScanner.dir/build.make CMakeFiles/serialTiltScanner.dir/depend
 	$(MAKE) -f CMakeFiles/serialTiltScanner.dir/build.make CMakeFiles/serialTiltScanner.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ben/workspace/serialTest/CMakeFiles --progress-num=5,6 "Built target serialTiltScanner"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ben/workspace/serialTest/CMakeFiles --progress-num=7,8 "Built target serialTiltScanner"
 .PHONY : CMakeFiles/serialTiltScanner.dir/all
 
 # Include target in all.
