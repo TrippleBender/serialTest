@@ -57,7 +57,7 @@ int main (int argc, char** argv)
 		if (my_serial_stream.IsDataAvailable())
 		{
 			char next_char;
-			my_serial_stream.FlushInputBuffer();
+			//my_serial_stream.FlushInputBuffer();
 			do
 			{
 				my_serial_stream >> next_char;
