@@ -18,9 +18,9 @@ void writeDyn(void);
 uint16_t i = 0;
 uint16_t outBuffer[ARRAY_VAR_COUNT];
 
-uint16_t startPosition = 1500;
-uint16_t endPosition = 2000;
-uint16_t speed = 200;
+uint16_t startPosition = 1645;
+uint16_t endPosition = 2326;
+uint16_t speed = 325;
 
 int main (int argc, char** argv)
 {
@@ -47,18 +47,25 @@ int main (int argc, char** argv)
 	usleep(100000);
 	my_serial_stream.FlushInputBuffer();
 
+	usleep(100);
+
+	my_serial_stream << 'A';
+	my_serial_stream << startPosition << std::endl;
+	my_serial_stream << endPosition << std::endl;
+	my_serial_stream << speed << std::endl;
+	usleep(100);
+
 	while(true)
 	{
 		i++;
 		char buffer[ARDUINO_BUFFER_SIZE];
 
-		writeDyn();
-		char * charpointer = (char *) (outBuffer);
+		//writeDyn();
+		/*char * charpointer = (char *) (outBuffer);
 		my_serial_stream << '0';
 		usleep(100);
 		my_serial_stream.write(charpointer, ARRAY_VAR_COUNT * 2);
-		usleep(100);
-
+		usleep(100);*/
 
 		if (my_serial_stream.IsDataAvailable())
 		{
@@ -95,7 +102,7 @@ int main (int argc, char** argv)
 
 void writeDyn(void)
 {
-	outBuffer[0] = startPosition;
+	/*outBuffer[0] = startPosition;
 	outBuffer[1] = endPosition;
-	outBuffer[2] = speed;
+	outBuffer[2] = speed;*/
 }
